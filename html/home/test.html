@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+	html,body{
+		/* filter:grayscale(1) blur(2px) opacity(.9) hue-rotate(10deg);
+		-moz-filter:grayscale(1) blur(2px) opacity(.9) hue-rotate(10deg);
+		-webkit-filter:grayscale(1) blur(2px) opacity(.9) hue-rotate(10deg);
+		-o-filter:grayscale(1) blur(2px) opacity(.9) hue-rotate(10deg);
+		filter:gray; */
+	}
+	.dd{
+		height: 300px;
+		width: 300px;
+		border: 1px solid red;
+		background:#FF0000 url('../../images/banner03.png') no-repeat center;
+		/*background-blend-mode:screen;*/
+		/*filter:blur(10px);
+		-webkit-filter:blur(10px);
+		-moz-filter:blur(10px);
+		-o-filter:blur(10px);*/
+	}
+	.gray{
+	}
+
+	.gray:hover{
+		animation-name:test;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	animation-delay: 0s;
+	}
+
+	@keyframes test{
+		0%{
+			-webkit-filter:grayscale(0.5);
+			-moz-filter:grayscale(0.5);
+			-o-filter:grayscale(0.5);
+			filter:grayscale(0.5);
+		}
+		100%{
+			-webkit-filter:grayscale(1);
+			-moz-filter:grayscale(1);
+			-o-filter:grayscale(1);
+			filter:grayscale(1);
+		}
+	}
+	</style>
+</head>
+<body>
+	
+	<div style="width:100px;background-color:red;text-overflow:ellipsis; white-space:nowrap; ">0000</div>
+	<div class="dd"></div>
+
+	<img src="../../images/banner02.png" width="200" height="200" class="gray">
+</body>
+</html>

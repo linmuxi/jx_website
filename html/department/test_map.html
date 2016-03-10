@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+        body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+    </style>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=IkRmswcLmYhrGkksV9eUwkYl"></script>
+    <title>批量转换</title>
+</head>
+<body>
+    <div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+
+    var points = [new BMap.Point(114.066014,22.576864),
+                  new BMap.Point(116.38632786853032,39.90795884517671),
+                  new BMap.Point(113.876436,22.57593),
+                  new BMap.Point(113.892246,22.514112),
+                  new BMap.Point(114.128177,22.546827)
+    ];
+
+    //地图初始化
+    var bm = new BMap.Map("allmap");
+    bm.centerAndZoom(new BMap.Point(114.066035,22.552459), 13);
+
+	bm.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+
+
+	var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+	var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+	var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL}); //右上角，仅包含平移和缩放按钮
+	//bm.addControl(top_left_control);
+	bm.addControl(top_left_navigation);
+	//bm.addControl(top_right_navigation);
+
+
+
+    //坐标转换完之后的回调函数
+    translateCallback = function (data){
+      if(data.status === 0) {
+        for (var i = 0; i < data.points.length; i++) {
+
+        	var marker = new BMap.Marker(data.points[i]);
+			marker.setLabel(new BMap.Label("我是文字标注哦",{offset:new BMap.Size(20,-10)}));
+
+            bm.addOverlay(marker);
+
+            bm.setCenter(data.points[i]);
+
+        }
+      }
+    }
+    setTimeout(function(){
+        var convertor = new BMap.Convertor();
+        convertor.translate(points, 1, 5, translateCallback)
+    }, 1000);
+</script>
