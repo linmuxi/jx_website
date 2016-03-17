@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="吉信金融/前海吉信/吉信借款/吉信互联网金融/小额贷款/信用贷款/无抵押/无担保 ">
+    <meta name="description" content=" 吉信金融是一家致力于普惠金融的专业小微贷款服务公司，以协助银行、p2p平台、各类非银行机构为小微企业、个体工商户及中低收入人群提供快速简便、免抵押、免担保小微贷款服务为宗旨。">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/layer")
+    @Scripts.Render("~/bundles/constants")
+</head>
+<body>
+
+    <main class="main">
+        <!-- 顶部服务热线 -->
+        <section class="top">
+            <div class="top-inner-wrap">
+                <span class="float-left">全国热线：40088-10115</span>
+                <a href="javascript:void" id="online_subscribe_id" class="float-right">预约服务</a>
+                <a href="~/Company?nav=20" class="float-right">关于我们</a>
+            </div>
+        </section>
+
+        <!-- 公司logo和网站导航菜单 -->
+        <header class="header">
+            <!--width:1010px center-->
+            <div class="header-inner-wrap">
+                <img src="../../images/logo.png" alt="吉信金融Logo" width="140" height="50" class="float-left" style="padding-top:20px;">
+                <span class="float-left slogan"><!-- 专业成就普惠金融 --></span>
+                <nav class="float-right header-menu">
+                    <ul>
+                        @{
+                            var nav = Request.QueryString["nav"];
+                            nav = (nav == null || nav == "" ? "10" : nav);
+                        }
+                        <li class="@(nav=="10"?"current":"")"><a href="~/Home">首页</a></li>
+                        <li class="@(nav=="20"?"current":"")"><a href="~/Company?nav=20">公司介绍</a></li>
+                        <li class="@(nav=="30"?"current":"")"><a href="~/Product?nav=30">产品服务</a></li>
+                        <li class="@(nav=="40"?"current":"")"><a href="~/Department?nav=40">营业网点</a></li>
+                        <li class="@(nav=="50"?"current":"")"><a href="~/News?nav=50">新闻中心</a></li>
+                        <li class="@(nav=="60"?"current":"")"><a href="~/Joinus?nav=60">加入我们</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- end公司logo和网站导航菜单 -->
+        @RenderBody()
+        <footer class="footer">
+            <div class="footer-wrap">
+                <div class="float-left">
+                    <ul class="footer-menu">
+                        <li><a href="#" target="_blank">网站地图</a></li>
+                        <li><a href="#" target="_blank">版权声明</a></li>
+                        <li><a href="#" target="_blank">安全说明</a></li>
+                    </ul>
+                    <div class="clear"></div>
+                    <p>地址：深圳市福田区华富路 1018 号中航中心 25楼&nbsp;&nbsp;&nbsp;备案号：粤ICP 备 14098090 号</p>
+                </div>
+                <div class="float-right">
+                    <div class="concat-phone">
+                        <p>联系电话</p>
+                        <p>40088-10115</p>
+                    </div>
+                    <img class="code" src="../../images/code.png" width="100" height="100" alt="二维码">
+                </div>
+            </div>
+        </footer>
+    </main>
+    @RenderSection("scripts", required: false)
+
+    @Html.Partial("../Product/ClientApply")
+
+    <script type="text/javascript">
+
+        var clientApplyLayerId;
+
+        var clientApplyObj = { type: Window.JxWebSite.ClientApplyType.ClientSubscribe, productId: "" };
+
+        function clearForm() {
+            $("#username").val("");
+            $("#phone").val("");
+            $("#address").val("");
+            $("#sex").val(1);
+        }
+
+        /**
+            客户申请
+            arguments[0]:申请类型
+            arguments[1]:产品名称
+            arguments[2]:产品ID
+        **/
+        function clientApply(type) {
+
+            // 清空表单
+            clearForm();
+
+            // 弹出客户申请表单
+            clientApplyLayerId = layer.open({
+                type: 1,
+                title: (type == Window.JxWebSite.ClientApplyType.ClientSubscribe) ? "在线预约" : arguments[1] + " 产品申请",
+                skin: 'layui-layer-rim', //加上边框
+                area: ['600px', '340px'], //宽高
+                content: $("#clientApplyForm"),
+                cancel: function () {
+                    // 当取消弹出客户申请窗体的时候，要调用Home对象的makeOnlineForm方法，将表单借给首页使用
+                    layer.close(clientApplyLayerId);
+                    Window.JxWebSite.Home.makeOnlineForm();
+                }
+            });
+
+            clientApplyObj.type = type;
+
+            // 如果是产品申请，需要保存产品ID到后台
+            if(type == Window.JxWebSite.ClientApplyType.ProductApply){
+                clientApplyObj.productId = arguments[2];
+            }
+        }
+
+        // 获取客户表单数据
+        function getClientApplyForm() {
+
+            var username = $("#username").val();
+            var sex = $("input[name='sex']:checked").val();
+            var phone = $("#phone").val();
+            var address = $("#address").val();
+
+            return $.extend(clientApplyObj, {
+                username: username,
+                sex: sex,
+                phone: phone,
+                address: address
+            });
+        }
+
+        // 提交表单数据
+        function commitClientFormData(clientApplyForm,callback) {
+            var msg = "";
+            if (clientApplyForm.username == '' || clientApplyForm.username == undefined) {
+                msg += "姓名不能为空<br/>";
+            }
+            if (clientApplyForm.phone == '' || clientApplyForm.phone == undefined) {
+                msg += "联系电话不能为空<br/>";
+            }
+            if (clientApplyForm.address == '' || clientApplyForm.address == undefined) {
+                msg += "现居住地址不能为空<br/>";
+            }
+            if (msg != "") {
+                layer.alert(msg, {
+                    icon: 2,
+                    skin: "layer-ext-seaing"
+                });
+                return false;
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "/Product/ClientApply",
+                data: "type=" + clientApplyForm.type + "&productId=" + clientApplyForm.productId + "&username=" + clientApplyForm.username +
+                    "&sex=" + clientApplyForm.sex + "&phone=" + clientApplyForm.phone + "&address=" + clientApplyForm.address,
+                success: function (msg) {
+
+                    if (msg.Success) {
+                        layer.alert("申请成功，等待审核中", {
+                            icon: 1,
+                            skin: "layer-ext-seaing"
+                        });
+                        layer.close(clientApplyLayerId);
+                    }
+
+                    clearForm();
+
+                    //执行回调
+                    if (callback && typeof callback == "function") {
+                        callback.call(this,msg);
+                    }
+                }
+            });
+        }
+
+        // 客户申请提交事件
+        function clientApplyClickEvent() {
+            commitClientFormData(getClientApplyForm());
+        }
+
+        ; (function () {
+
+            // 预约服务
+            $("#online_subscribe_id").click(function () {
+                clientApply(Window.JxWebSite.ClientApplyType.ClientSubscribe);
+            });
+
+            // 提交申请
+            /**
+            $("#online_apply_btn").click(function () {
+
+                commitClientFormData(getClientApplyForm());
+                
+            });
+            **/
+        })();
+
+    </script>
+</body>
+</html>
