@@ -132,3 +132,4 @@ E:\opensource\github\jx_website_code\jx_website.Web\bin\zh-Hans\Microsoft.Owin.S
 E:\opensource\github\jx_website_code\jx_website.Web\bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
 E:\opensource\github\jx_website_code\jx_website.Web\obj\Debug\jx_website.Web.dll
 E:\opensource\github\jx_website_code\jx_website.Web\obj\Debug\jx_website.Web.pdb
+E:\opensource\github\jx_website_code\jx_website.Web\obj\Debug\jx_website.Web.csprojResolveAssemblyReference.cache

@@ -6,7 +6,7 @@
         <tr>
             <td>
                 <div class="department-head-search box-shadow-2px">
-                    <input type="text" placeholder="请输入城市或营业部查询" id="department_input_id">
+                    <input type="text" placeholder="请输入城市或营业部查询" id="department_input_id" maxlength="100">
                     <button id="department_search">搜索</button>
                 </div>
             </td>
@@ -107,11 +107,18 @@
                 });
             },
             this.search = function () {
+
+                var queryKey = arguments[0];
+                if (/[\~\!\#\>\<\?\/\$\%\^\&\*\(\)@@]/gi.test(queryKey)) {
+                    this.initTips({ txt: '搜索关键字含有特殊字符!', bgcolor: '#FF0000' });
+                    return;
+                }
+
                 var city = $("#city").val();
                 if(city == undefined){
                     city = "";
                 }
-                location.href = "/Department/QueryBranch?nav=40&province=" + $("#province option:selected").text() + "&city=" + city + "&queryKey=" + arguments[0];
+                location.href = "/Department/QueryBranch?nav=40&province=" + $("#province option:selected").text() + "&city=" + city + "&queryKey=" + queryKey;
 
             },
             this.getDepartmentInputValue = function () {
@@ -132,11 +139,11 @@
                     $("#department_input_id").val("@queryCondition.queryKey");
                 }
 
-                if("@queryCondition.province"){
-                    $("#province").find("option").each(function () {                        
+                if ("@queryCondition.province") {
+                    $("#province").find("option").each(function () {
                         var $this = $(this);
-                        if($this.text() == "@queryCondition.province"){
-                            $this.attr("selected",true);
+                        if ($this.text() == "@queryCondition.province") {
+                            $this.attr("selected", true);
                         }
                     });
 
@@ -182,9 +189,10 @@
                 }
             },
             this.initTips = function () {
+                var options = $.extend({ txt: '这里可以输入城市或营业部', bgcolor: '#3595CC' },arguments[0]);
                 // 因为ie不支持placeholder,这里采用tip来进行提示
-                layer.tips('这里可以输入城市或营业部', $("#department_input_id"), {
-                    tips: [1, '#3595CC'],
+                layer.tips(options.txt, $("#department_input_id"), {
+                    tips: [1, options.bgcolor],
                     time: 100000
                 });
             },
@@ -192,7 +200,7 @@
 
                 this.initMap();
 
-                this.initTips();
+                // this.initTips();
 
                 this.bindEvent();
 

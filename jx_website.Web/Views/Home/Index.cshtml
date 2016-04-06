@@ -3,11 +3,14 @@
 }
 <!-- 首页banner -->
 <section class="home-banner">
+    <img src="../../images/banner01.png" alt="" width="100%" height="100%" data-id="01" onclick="location.href='/Home#online_apply_wrap'"/>
+    <img src="../../images/banner02.png" alt="" width="100%" height="100%" data-id="02" style="display:none" />
+    <img src="../../images/banner03.png" alt="" width="100%" height="100%" data-id="03" style="display:none" />
     <div class="swap-banner-wrap">
         <div class="swap-btn">
-            <img class="current" src="../../images/banner01.png" width="80" height="50" data-sort="1">
+            @*<img class="current" src="../../images/banner01.png" width="80" height="50" data-sort="1" />
             <img src="../../images/banner02.png" width="80" height="50" data-sort="2">
-            <img src="../../images/banner03.png" width="80" height="50" data-sort="3">
+            <img src="../../images/banner03.png" width="80" height="50" data-sort="3">*@
         </div>
     </div>
 </section>
@@ -18,9 +21,9 @@
         <span class="float-left info-msg">
             <!-- <b>特别关注：</b>吉信正式运营一周年,隆重推出12月优惠活动 -->
             <!-- 这里滚动显示借款信息，每次一条,3s滚动一次 -->
-            湖北武汉李先生借款4188元，用于购买6516G(13:33)
+            @*湖北武汉李先生借款4188元，用于购买6516G*@
         </span>
-        <span class="float-right info-more"><a href="#" >了解详情</a></span>
+        <span class="float-right info-more"><a href="~/Product?nav=30">了解详情</a></span>
     </div>
 </section>
 <!-- end特别消息显示区域 -->
@@ -401,7 +404,12 @@
                 var $swapbtn = $(".swap-btn");
                 var imgList = $swapbtn.find("img");
                 var checkedImg = $(imgList[this.bannerSwapIdx++]);
-                $swapbtn.parent().parent().css({ "background-image": "url('" + checkedImg.attr("src") + "')", "background-repeat": "no-repeat" });
+                var _this = this;
+                $swapbtn.parent().prevAll().each(function (idx, obj) {
+                    var _$obj = $(obj);
+                    _$obj.css("display", (_$obj.data("id") == "0" + (_this.bannerSwapIdx))?"block":"none");
+                });
+                // $swapbtn.parent().parent().css({ "background-image": "url('" + checkedImg.attr("src") + "')", "background-repeat": "no-repeat" });
 
                 for (var i = 0; i < imgList.length; i++) {
                     $(imgList[i]).removeClass("current");
@@ -447,16 +455,21 @@
             },
             loadBorrowInfo: function () {
                 // 加载借款信息
+
                 $.ajax({
                     url: "/Home/BorrowInfo",
                     data: "",
                     type: "post",
                     success: function (msg) {
                         if (msg && msg.Success) {
-                            $(".info-msg").html(msg.Msg);
+                            var obj = JSON.parse(msg.Msg);
+                            if (obj.todayBorrowerDetail && obj.todayBorrowerDetail.length>0) {
+                                $(".info-msg").html(obj.todayBorrowerDetail[0].text);
+                            }
                         }
                     }
                 });
+
 
             }
         }

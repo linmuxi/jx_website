@@ -6,10 +6,10 @@
 }
 body{
 	background-color: #FFF;
-	font-size: 15px; ``
+	font-size: 15px;
 	font-family: '微软雅黑',Verdana,Arial,sans-serif;
-	min-width: 1010px;
 	/** min-width: 1450px;*/
+	min-width: 1010px;
 }
 
 ul{
@@ -61,7 +61,7 @@ ul{
 
 .header-inner-wrap{
 	width:1010px;margin:0 auto;
-	overflow: auto;
+	/*overflow: auto;*/
 }
 
 .header .slogan{
@@ -76,12 +76,20 @@ ul{
 	width: 100px;
 	text-align: center;
 	line-height: 85px;
+    transition:all 0.3s;
+    -moz-transition:all 0.3s;
+    -o-transition:all 0.3s;
+    -webkit-transition:all 0.3s;
 }
 .header-menu ul li a{
 	color: #868080;
 	font-weight: bold;
 	display: inline-block;
 	width: 100%;
+    transition:all 0.3s;
+    -moz-transition:all 0.3s;
+    -o-transition:all 0.3s;
+    -webkit-transition:all 0.3s;
 }
 
 /* .header-menu li:last-child{
@@ -102,9 +110,9 @@ ul{
 
 /*banner*/
 .home-banner{
-	height: 570px;
+	/*height: 570px;*/
 	position: relative;
-	background-size: 100% 100%;
+	/*background-size: cover;*/
 }
 
 .swap-banner-wrap{
@@ -114,6 +122,8 @@ ul{
 	right: 0px;
 	height: 70px;
 	background-color: rgba(54,53,51,0.7);
+
+    display:none;
 }
 
 .swap-btn{
@@ -172,7 +182,8 @@ ul{
 /*产品中心*/
 .product-center{
 	height: 540px;
-	margin-top: 80px;
+	/*margin-top: 80px;*/
+    margin-top:40px;
 }
 
 .product-center-wrap{
@@ -732,11 +743,19 @@ ul{
 	width: 240px;
 	float: left;
 	margin:30px 10px 0px 0px;
+    transition:all 0.7s;
+    -moz-transition:all 0.7s;
+    -webkit-transition:all 0.7s;
+    -o-transition:all 0.7s;
 }
 
 .product-item:hover{
-	box-shadow: 0px 0px 0px 2px #CACACA;
+	/*box-shadow: 0px 0px 0px 2px #CACACA;*/
 	cursor: pointer;
+    transform:scale(1.05);
+    -moz-transform:scale(1.05);
+    -webkit-transform:scale(1.05);
+    -o-transform:scale(1.05);
 }
 
 .product-item figcaption{

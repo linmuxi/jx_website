@@ -82,6 +82,9 @@
                 $(".news-content").find("p").each(function () {
                     $(this).html($(this).text());
                 });
+
+                var firstNewsDetail = $(".first-news-detail");
+                firstNewsDetail.html(firstNewsDetail.text());;
             },
             this.dateParse = function () {
                 // 日期转换
