@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "产品明细 - " + ViewBag.Title;
+    var Product = ViewBag.Product;
+}
+
+
+<section class="product-intro-wrap">
+
+    <section class="product-intro">
+
+        <div class="product-intro-detail float-left box-shadow-2px">
+            <hr class="red-hr">
+            <p class="product-intro-title">@Product.name</p>
+            <div class="product-intro-detail-form">
+                <p>
+                    <label for="">额度：</label><span style="padding-left: 31px;">@Product.maxlimit 万</span>
+                </p>
+                <p>
+                    <label for="">期数：</label><span style="padding-left: 31px;">@Product.periods 期</span>
+                </p>
+                <p>
+                    <label for="">月费率：</label><span style="padding-left: 15px;">低至 @Product.monthRate %</span>
+                </p>
+                <p>
+                    <label for="">适合群体：</label><span style="padding-left: 1px;">@Product.fitGroup</span>
+                </p>
+                <p>
+                    <label for="">申请条件：</label>
+                    <div style="padding-left: 80px;">
+                        @Product.applyCondition
+                    </div>
+                </p>
+                <p>
+                    <label for="">申请资料：</label>
+                    <div style="padding-left: 80px;">
+                        @Product.applyData
+                    </div>
+                </p>
+            </div>
+            <p class="product-intro-apply">
+                <a href="javascript:void(0);">立即申请</a>
+            </p>
+        </div>
+
+        <div class="product-intro-more float-right">
+            <div class="box-shadow-2px">
+                <p>相关产品</p>
+                @foreach (var product in ViewBag.MoreProduct)
+                {
+                    <img src="@product.picUrl" width="70" height="65" alt="@product.name" title="@product.name" onclick="location.href='/Product/Detail?nav=30&id=@product.id'" />
+                }
+            </div>
+
+            <div class="box-shadow-2px">
+                <p>更多资讯</p>
+                <img src="../../images/code.png" width="120" height="120" alt="二维码" style="cursor:inherit;">
+            </div>
+        </div>
+
+
+    </section>
+
+    <div class="clear"></div>
+
+</section>
+
+
+<script>
+
+    $(".product-intro-detail-form").find("div").each(function () {
+        $(this).html($(this).text());
+    });
+
+    // 产品申请
+    $(".product-intro-apply a").click(function () {
+        clientApply(Window.JxWebSite.ClientApplyType.ProductApply, "@Product.name", "@Product.id");
+    });
+
+</script>

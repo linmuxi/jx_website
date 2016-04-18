@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "新闻中心";
+    var news = ViewBag.News;
+}
+<section class="news-detail-head-bg"></section>
+
+<section class="news-detail-wrap">
+
+    <section class="news-detail-content-wrap box-shadow-2px">
+        <p class="news-detail-title">@news.title</p>
+        <p class="news-detail-date">@news.lastUpdateDate</p>
+        <p class="news-detail-content">@news.content</p>
+    </section>
+
+</section>
+
+<script>
+    $(".news-detail-content-wrap").find("p").each(function () {
+        $(this).html($(this).text());
+    });
+</script>

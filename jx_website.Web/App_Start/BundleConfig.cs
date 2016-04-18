@@ -26,9 +26,6 @@ namespace jx_website.Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/default.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/layer").Include(
-                        "~/Plugins/layer/layer.js"));
-
             bundles.Add(new ScriptBundle("~/bundles/constants").Include(
                         "~/Scripts/constants.js"));
         }

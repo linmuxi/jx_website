@@ -39,7 +39,9 @@ namespace jx_website.Web.Controllers
         public JsonResult BorrowInfo()
         {
             string paramstr = "{\"pass\":\"jxjr_12346app\",\"date\":\"\"}";
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://218.17.125.60:6150/api/Android/DisplayData");
+            //string url = "http://218.17.125.60:6150/api/Android/DisplayData";  // test env
+            string url = "http://10.0.88.88:6150/api/Android/DisplayData"; // product env
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
             request.ContentLength = Encoding.UTF8.GetByteCount(paramstr);

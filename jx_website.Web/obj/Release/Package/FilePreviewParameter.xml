@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="www.jxjust.com" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^E:\\opensource\\github\\jx_website_code\\jx_website\.Web\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^E:\\opensource\\github\\jx_website_code\\jx_website\.Web\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="MySqlConnection-Web.config Connection String" description="" value="Server=10.0.80.214;Database=website;Uid=root;Pwd=root;charset=utf8;" tags="">
+    <parameterEntry kind="XmlFile" scope="E:\\opensource\\github\\jx_website_code\\jx_website\.Web\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MySqlConnection']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,124 @@
+﻿@{
+    ViewBag.Title = "新闻中心";
+}
+<section class="news-center-head-bg"></section>
+
+<section class="news-center-content-wrap">
+
+    <section class="news-center-content">
+
+        <!-- 新闻区域 -->
+        <div class="news-center-detail float-left box-shadow-2px">
+
+            <!-- 新闻首条 -->
+            <div class="news-box first-news">
+                <div class="first-news-content" data-id="@ViewBag.firstNews.id">
+                    <p class="first-news-date">DEC 23 , 2015</p>
+                    <p class="news-title">@ViewBag.firstNews.title</p>
+                    <p class="first-news-detail">@ViewBag.firstNews.content</p>
+                    <span class="first-news-btn">
+                        <img src="../../images/first_news_btn.png" alt="" height="24" width="36">
+                    </span>
+                    <span style="display:none">@ViewBag.firstNews.lastUpdateDate</span>
+                </div>
+                <div class="first-news-pic">
+                    <img src="@ViewBag.firstNews.mainPicUrl" alt="新闻图片" width="380" height="215">
+                </div>
+            </div>
+
+
+            <!-- 新闻列表 -->
+
+            @foreach(var news in @ViewBag.newsList){
+                <div class="news-box">
+                    <div class="news-date">
+                        <p>23</p>
+                        <p>DEC</p>
+                        <p>2015</p>
+                        <span style="display:none">@news.lastUpdateDate</span>
+                    </div>
+                    <div class="news-content" data-id="@news.id">
+                        <p class="news-title">@news.title</p>
+                        <p class="news-detail">@news.content</p>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+
+        <!-- end 新闻区域 -->
+        <!-- 广告区域 -->
+        <div class="news-center-rd float-right box-shadow-2px">
+            <img src="../../images/news_center_rd_01.jpg" alt="广告" width="155" height="200">
+            <img src="../../images/news_center_rd_02.jpg" alt="广告" width="155" height="200">
+        </div>
+
+
+    </section>
+
+    <div class="clear"></div>
+
+</section>
+
+
+<script>
+    ; $(function () {
+
+        var m = new Array("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Spt", "Oct", "Nov", "Dec");
+
+        // 补零
+        function zeroFill() {
+            var value = arguments[0];
+            if (parseInt(value) < 10) {
+                return "0" + value;
+            }
+            return value;
+        }
+
+        function News() {
+            this.escapeContent = function () {
+                // 处理职责要求换行换行
+                $(".news-content").find("p").each(function () {
+                    $(this).html($(this).text());
+                });
+
+                var firstNewsDetail = $(".first-news-detail");
+                firstNewsDetail.html(firstNewsDetail.text());;
+            },
+            this.dateParse = function () {
+                // 日期转换
+
+                // 首条新闻
+                var firstNewsContent = $(".first-news-content");
+                var firstNewsDate = new Date(firstNewsContent.find("span").last().text());
+                firstNewsContent.find(".first-news-date").html(m[firstNewsDate.getMonth()] + "  " + zeroFill(firstNewsDate.getDate()) + " , " + firstNewsDate.getFullYear());
+
+                // 新闻列表
+                $(".news-date").each(function () {
+                    var $this = $(this);
+                    var newsDate = new Date($this.find("span").text());
+                    var p = $this.find("p");
+                    p[0].innerHTML = zeroFill(newsDate.getDate());
+                    p[1].innerHTML = m[newsDate.getMonth()];
+                    p[2].innerHTML = newsDate.getFullYear();
+                });
+            },
+            this.bindEvent = function () {
+                $(".news-title,.first-news-btn").bind("click", function () {
+                    location.href = "/News/Detail?nav=50&id=" + $(this).parent().data("id");
+                });
+
+            }
+            this.init = function () {
+                this.escapeContent();
+                this.dateParse();
+                this.bindEvent();
+            }
+        }
+
+        var news = new News();
+        news.init();
+    });
+
+</script>
