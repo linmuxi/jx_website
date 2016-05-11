@@ -36,6 +36,8 @@ namespace jx_website.Web.Models
         public Department Clone()
         {
             return (Department)this.MemberwiseClone();
-        } 
+        }
+
+        public string email { get; set; }
     }
 }

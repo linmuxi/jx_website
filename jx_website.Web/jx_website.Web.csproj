@@ -187,11 +187,17 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="html\default.css" />
+    <Content Include="html\product_detail_fced.html" />
+    <Content Include="html\product_detail_jsd.html" />
+    <Content Include="html\product_detail_syed.html" />
+    <Content Include="html\product_detail_xjed.html" />
     <Content Include="Images\banner01.png" />
     <Content Include="Images\banner02.png" />
     <Content Include="Images\banner03.png" />
     <Content Include="Images\bjbank.png" />
     <Content Include="Images\brand.png" />
+    <Content Include="Images\brand_back.png" />
     <Content Include="Images\by.png" />
     <Content Include="Images\code.png" />
     <Content Include="Images\company_bg.png" />
@@ -203,6 +209,7 @@
     <Content Include="Images\first_news_btn.png" />
     <Content Include="Images\home_fced.gif" />
     <Content Include="Images\home_jyed.gif" />
+    <Content Include="Images\home_jyed.png" />
     <Content Include="Images\home_syed.gif" />
     <Content Include="Images\home_yxed.gif" />
     <Content Include="Images\huaaoxintuo.png" />
@@ -240,9 +247,14 @@
     <Content Include="Images\quality2.png" />
     <Content Include="Images\quality3.png" />
     <Content Include="Images\quality4.png" />
+    <Content Include="Images\query.jpg" />
     <Content Include="Images\syd.png" />
     <Content Include="Images\tlzf.png" />
     <Content Include="Images\zgbank.png" />
+    <Content Include="Plugins\city-picker\css\city-picker.css" />
+    <Content Include="Plugins\city-picker\js\city-data.js" />
+    <Content Include="Plugins\city-picker\js\citySet.js" />
+    <Content Include="Plugins\city-picker\js\Popt.js" />
     <Content Include="Plugins\layer\extend\layer.ext.js" />
     <Content Include="Plugins\layer\layer.js" />
     <Content Include="Plugins\layer\skin\default\icon-ext.png" />
@@ -260,7 +272,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Database.cs</LastGenOutput>
     </Content>
-    <None Include="Properties\PublishProfiles\websiteConfig.pubxml" />
+    <None Include="Properties\PublishProfiles\a.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\constants.js" />
     <Content Include="Scripts\jplaceholder.js" />
@@ -277,6 +289,7 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\util.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="html\product_detail_bded.html" />
     <Content Include="upload\20150409\20150409050535_723.jpg" />
     <Content Include="upload\20150410\20150410145603_535.jpg" />
     <Content Include="upload\20150413\20150413140716_475.jpg" />
@@ -331,6 +344,34 @@
     <Content Include="upload\20151013\20151013055929_608.jpg" />
     <Content Include="upload\20151013\20151013060123_344.jpg" />
     <Content Include="upload\201510\20151013170422119.jpg" />
+    <Content Include="upload\201601\2016011501.jpg" />
+    <Content Include="upload\201601\2016011502.jpg" />
+    <Content Include="upload\201601\2016011503.jpg" />
+    <Content Include="upload\201601\2016011504.jpg" />
+    <Content Include="upload\201601\2016011505.jpg" />
+    <Content Include="upload\201601\2016011506.jpg" />
+    <Content Include="upload\201601\2016011507.jpg" />
+    <Content Include="upload\201601\2016011508.jpg" />
+    <Content Include="upload\201601\2016011901.jpg" />
+    <Content Include="upload\201601\2016011902.jpg" />
+    <Content Include="upload\201601\2016011903.jpg" />
+    <Content Include="upload\201602\2016022501.jpg" />
+    <Content Include="upload\201604\2016041101.jpg" />
+    <Content Include="upload\201604\2016041102.jpg" />
+    <Content Include="upload\201604\2016041103.jpg" />
+    <Content Include="upload\201604\2016041104.jpg" />
+    <Content Include="upload\201604\2016041105.jpg" />
+    <Content Include="upload\201604\2016041106.jpg" />
+    <Content Include="upload\201604\2016041107.jpg" />
+    <Content Include="upload\201604\2016041901.jpg" />
+    <Content Include="upload\201604\2016041902.jpg" />
+    <Content Include="upload\201604\2016041903.jpg" />
+    <Content Include="upload\201604\2016041904.jpg" />
+    <Content Include="upload\201604\2016041905.jpg" />
+    <Content Include="upload\201604\2016041906.jpg" />
+    <Content Include="upload\201604\2016041907.jpg" />
+    <Content Include="upload\201604\2016041908.jpg" />
+    <Content Include="upload\201604\2016041909.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

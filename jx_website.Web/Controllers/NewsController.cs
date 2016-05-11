@@ -18,6 +18,7 @@ namespace jx_website.Web.Controllers
             // 按照创建日期降序查询
             News news = new News();
             news.sortField = "create_date";
+            news.sortType = "asc";
             List<News> list = newsBLL.queryNewsList(news);
 
             ViewBag.firstNews = list[0];

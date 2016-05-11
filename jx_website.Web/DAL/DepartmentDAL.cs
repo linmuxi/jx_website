@@ -34,10 +34,11 @@ namespace jx_website.Web.DAL
             return list.ToList<Department>();
         }
 
-        public News getNewsById(int id)
+
+        public Department GetDepartmentByCity(string city)
         {
             PetaPoco.Database db = DBHelper.newInstance().getDB();
-            return db.SingleOrDefault<News>("select * from news n where n.id = @0", id);
+            return db.FirstOrDefault<Department>("SELECT * FROM branch t WHERE t.city LIKE CONCAT(SUBSTR(@0,1,2),'%') LIMIT 0,1", new object[] { city });
         }
     }
 }

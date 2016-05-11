@@ -18,6 +18,7 @@
     <div>请选择查询的城市：</div>
     <div id="province_wrap" class="department-province"><select name="" id=""></select><i></i></div>
     <div id="city_wrap" class="department-city"><select name="" id=""></select><i></i></div>
+    <div id="departmentQuery" class="department-query"></div>
 </section>
 
 <section class="department-map-wrap">
@@ -34,7 +35,7 @@
 
             <div class="dm-map-right">
                 <p>营业部服务</p>
-                <p>2015年5月、6月，吉信金融深圳宝安、深圳龙华、南京、常州、扬州、杭州、合肥、宜昌、襄阳、潍坊、长春、大庆12家营业部盛大开业。至今吉信金融已在全国铺设22家营业网点，基本覆盖全国主要城市。</p>
+                <p>至今吉信金融已在全国铺设29家营业网点，基本覆盖全国主要城市。</p>
             </div>
 
         </div>
@@ -96,7 +97,7 @@
             this.bindEvent = function () {
                 var _this = this;
                 // 搜索
-                $("#department_search").click(function () {
+                $("#department_search,#departmentQuery").click(function () {
                     _this.search(_this.getDepartmentInputValue());
                 });
 
@@ -214,5 +215,8 @@
         var branch = new Branch();
         branch.init();
 
+        $.branch = branch;
+
     })();
+
 </script>

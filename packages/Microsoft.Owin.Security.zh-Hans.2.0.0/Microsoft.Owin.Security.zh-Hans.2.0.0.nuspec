@@ -11,6 +11,7 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>此程序包包含 Microsoft Owin Security 的简体中文附属程序集</description>
     <summary>Microsoft.Owin.Security 程序包的简体中文资源。</summary>
+    <releaseNotes />
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <language>zh-Hans</language>
     <tags>OWIN</tags>

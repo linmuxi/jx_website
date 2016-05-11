@@ -13,7 +13,7 @@ namespace jx_website.Web.DAL
         {
             PetaPoco.Database db = DBHelper.newInstance().getDB();
 
-            var sql = "select * from product p where 1 = 1 ";
+            var sql = "select * from product p where 1 = 1 and is_show = '1' ";
 
             if ("1".Equals(product.isHome))
             {
@@ -36,7 +36,7 @@ namespace jx_website.Web.DAL
 
             PetaPoco.Database db = DBHelper.newInstance().getDB();
 
-            return db.Single<Product>("select * from product p where p.id = @0", id);
+            return db.Single<Product>("select * from product p where is_show = 1 and p.id = @0", id);
         }
 
         //相关产品
@@ -44,19 +44,42 @@ namespace jx_website.Web.DAL
         {
             PetaPoco.Database db = DBHelper.newInstance().getDB();
 
-            var sql = "select * from product p where 1 = 1 order by last_update_date desc";
+            var sql = "select * from product p where is_show = 1 order by last_update_date desc";
 
             PetaPoco.Page<Product> productPage = db.Page<Product>(1, 4, sql, new object[] { });
 
             return productPage.Items;
         }
 
-        public bool addClientApply(ClientApply clientApply)
+        /// <summary>
+        /// 添加客户申请
+        /// </summary>
+        /// <param name="clientApply"></param>
+        /// <returns></returns>
+        public object addClientApply(ClientApply clientApply)
         {
             PetaPoco.Database db = DBHelper.newInstance().getDB();
-            
-            return db.Execute("INSERT INTO client_apply(TYPE,product_id,username,idcard,phone,sex,address) VALUES(@0,@1,@2,@3,@4,@5,@6)",
-                clientApply.type, clientApply.productId, clientApply.username, clientApply.idcard, clientApply.phone, clientApply.sex, clientApply.address) > 0;
+
+            return db.Insert(clientApply);
+
+            //return db.Execute("INSERT INTO client_apply(TYPE,product_id,username,idcard,phone,sex,address) VALUES(@0,@1,@2,@3,@4,@5,@6)",
+            //    clientApply.type, clientApply.productId, clientApply.username, clientApply.idcard, clientApply.phone, clientApply.sex, clientApply.address) > 0;
+        }
+
+        public ClientApply getClientApplyByPhoneAndUsername(ClientApply obj)
+        {
+            PetaPoco.Database db = DBHelper.newInstance().getDB();
+
+            //return db.Single<ClientApply>("select * from client_apply t where t.username=@0 and t.phone = @1", new object[] { obj.username, obj.phone });
+            //return db.Single<ClientApply>("select * from client_apply t where t.username='11' and t.phone = '111'");
+
+            return db.FirstOrDefault<ClientApply>("select * from client_apply t where t.username=@0 and t.phone = @1", new object[] { obj.username, obj.phone });
+        }
+
+        public bool UpdateEmailStatus(ClientApply obj)
+        {
+            PetaPoco.Database db = DBHelper.newInstance().getDB();
+            return db.Execute("UPDATE client_apply t SET t.`is_sendMail` = '1' WHERE t.`id` = @0", new object[] { obj.id }) > 0;
         }
     }
 }

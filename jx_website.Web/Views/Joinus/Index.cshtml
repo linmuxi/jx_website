@@ -12,9 +12,9 @@
             <p style="padding-top: 20px">遇到好公司，就别二了</p>
             <p style="padding-top: 20px">联系我们</p>
             <p style="padding-top: 30px">
-                <span class="joinus-person">王巧红</span>
+                <span class="joinus-person">王小姐</span>
                 <span class="joinus-phone">0755-6686 2251</span>
-                <span class="joinus-mobile-phone">13417512595</span>
+                @*<span class="joinus-mobile-phone">13417512595</span>*@
             </p>
         </div>
 
@@ -56,18 +56,31 @@
 
 <script>
     ; $(function () {
-        $(".joinus-job-btn").bind("click", function () {
-            var $this = $(this);
+        //$(".joinus-job-btn").bind("click", function () {
+        //    var $this = $(this);
+        //    var $jobId = $("#" + $this.data("job-id"));
+        //    // var $parent = $jobId.parent();
+        //    if ($jobId.is(":hidden")) {
+        //        $jobId.show();
+        //        $this.text("收起");
+        //        // $parent.css("margin-bottom","10px");
+        //    } else {
+        //        $jobId.hide();
+        //        $this.text("了解详情");
+        //        // $parent.css("margin-bottom","0px");
+        //    }
+        //});
+
+
+        $(".joinus-job-title").bind("click", function () {
+            var $this = $(this).children().eq(2);
             var $jobId = $("#" + $this.data("job-id"));
-            // var $parent = $jobId.parent();
             if ($jobId.is(":hidden")) {
                 $jobId.show();
                 $this.text("收起");
-                // $parent.css("margin-bottom","10px");
             } else {
                 $jobId.hide();
                 $this.text("了解详情");
-                // $parent.css("margin-bottom","0px");
             }
         });
 

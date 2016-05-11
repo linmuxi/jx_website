@@ -15,5 +15,10 @@ namespace jx_website.Web.BLL
         {
             return this.departmentDAL.queryDepartmentList(dept);
         }
+
+        public Department GetDepartmentByCity(string city)
+        {
+            return this.departmentDAL.GetDepartmentByCity(city);
+        }
     }
 }

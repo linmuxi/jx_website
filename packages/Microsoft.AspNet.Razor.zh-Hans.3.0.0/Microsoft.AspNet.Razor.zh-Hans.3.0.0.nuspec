@@ -11,6 +11,7 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>此程序包包含 ASP.NET Razor 的简体中文附属程序集。</description>
     <summary>Microsoft.AspNet.Razor 程序包的简体中文资源</summary>
+    <releaseNotes />
     <copyright>© Microsoft Corporation。保留所有权利。</copyright>
     <language>zh-Hans</language>
     <tags>Microsoft AspNet WebPages AspNetWebPages Razor</tags>

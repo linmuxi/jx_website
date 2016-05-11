@@ -48,5 +48,8 @@ namespace jx_website.Web.Models
 
         [PetaPoco.ResultColumn("last_update_date")]
         public DateTime lastUpdateDate { get; set; }
+
+        [PetaPoco.ResultColumn("product_url")]
+        public string productUrl { get; set; }
     }
 }

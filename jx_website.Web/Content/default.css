@@ -1,4 +1,11 @@
-﻿main,article,aside,footer,header,section,footer,nav,figure{display:block}
+﻿/*!
+ * jxweb v2.0.0
+ *
+ * Copyright 2016 Hunter, jxjust
+ * 
+ * CreateDate 2016-02
+ */
+main,article,aside,footer,header,section,footer,nav,figure{display:block}
 *{
 	padding: 0;
 	margin: 0;
@@ -635,16 +642,12 @@ ul{
 	margin-top: 20px;
 	background-color: #FFF;
 	padding: 30px 20px;
-	line-height: 1.5em;
+	line-height: 1.6em;
 	color: #5F5F5F;
 }
 
 .company-content-item p{
 	text-indent: 2em;
-}
-
-.company-content-item-noindent p{
-	text-indent: 0em;
 }
 
 .company-head-bg{
@@ -830,7 +833,7 @@ ul{
 
 .product-intro-apply{
 	text-align: center;
-	padding: 30px;
+	padding: 15px;
 }
 
 .product-intro-apply a{
@@ -895,6 +898,7 @@ ul{
 	position: relative;
 	border-bottom: 1px solid #DFDFDF;
 	color: #565656;
+	cursor: pointer;
 }
 
 .joinus-job-title p:first-child{
@@ -909,7 +913,6 @@ ul{
 	position: absolute;
 	right: 10px;
 	top: 25px;
-	cursor: pointer;
 }
 
 .joinus-job-content{
@@ -1121,6 +1124,10 @@ ul{
     color:#5d5d5d;
 }
 
+.news-detail-content-wrap img{
+    max-width:900px;
+}
+
 /*end 新闻中心*/
 
 
@@ -1239,6 +1246,22 @@ ul{
 	position: absolute;
 	right: 0;
 	top: 0;
+}
+
+.department-query{
+    background-image: url(../images/query.jpg);background-repeat:no-repeat;cursor:pointer; width:50px; margin-left:10px;
+    background-size:contain;
+    transition:all 1s;
+    -moz-transition:all 1s;
+    -o-transition:all 1s;
+    -webkit-transition:all 1s;
+}
+
+.department-query:hover{
+    transform:scale(1.05);
+    -moz-transform:scale(1.05);
+    -webkit-transform:scale(1.05);
+    -o-transform:scale(1.05);
 }
 
 .department-head-bg table{

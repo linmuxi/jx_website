@@ -13,7 +13,7 @@ namespace jx_website.Web.DAL
         {
             PetaPoco.Database db = DBHelper.newInstance().getDB();
             
-            List<Job> jobs = db.Query<Job>("select * from job").ToList<Job>();
+            List<Job> jobs = db.Query<Job>("select * from job where is_show = 1").ToList<Job>();
 
             return jobs;
         }

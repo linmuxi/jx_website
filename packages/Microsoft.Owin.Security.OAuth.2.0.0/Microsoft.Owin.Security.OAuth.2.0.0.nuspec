@@ -10,6 +10,7 @@
     <projectUrl>http://katanaproject.codeplex.com/</projectUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Middleware that enables an application to support any standard OAuth 2.0 authentication workflow.</description>
+    <summary />
     <tags>Microsoft OWIN</tags>
     <dependencies>
       <dependency id="Owin" version="1.0" />

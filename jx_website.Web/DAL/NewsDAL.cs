@@ -15,7 +15,7 @@ namespace jx_website.Web.DAL
 
             //PetaPoco.Page<News> newsPage = db.Page<News>(10, 1, "select count(1) from news", null, "select * from news order by last_update_date desc",null);
 
-            PetaPoco.Page<News> newsPage = db.Page<News>(news.pageNo, news.pageLimit, "select * from news order by @0 @1",news.sortField,news.sortType);
+            PetaPoco.Page<News> newsPage = db.Page<News>(news.pageNo, news.pageLimit, "select * from news where is_show = 1 order by create_date desc ",news.sortField,news.sortType);
 
             return newsPage.Items;
         }

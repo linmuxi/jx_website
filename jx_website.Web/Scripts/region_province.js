@@ -366,7 +366,6 @@ function getRegion() {
     }
     str = str + "</select>";
     $("#city_wrap").append(str);
-
 }
 function getProvince() {
     $("#province_wrap").html("<i></i>");

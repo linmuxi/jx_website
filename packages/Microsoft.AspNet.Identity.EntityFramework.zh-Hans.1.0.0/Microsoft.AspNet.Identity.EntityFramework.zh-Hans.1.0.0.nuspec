@@ -10,6 +10,7 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>此程序包包含 ASP.NET Identity Entity Framework 库的简体中文附属程序集。</description>
     <summary>Microsoft.AspNet.Identity.EntityFramework 程序包的简体中文资源</summary>
+    <releaseNotes />
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
     <language>zh-Hans</language>
     <tags>Identity Membership</tags>

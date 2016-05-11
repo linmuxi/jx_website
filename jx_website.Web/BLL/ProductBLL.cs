@@ -23,9 +23,19 @@ namespace jx_website.Web.BLL
         {
             return this.productDAL.queryMoreProduct();
         }
-        public bool addClientApply(ClientApply clientApply)
+        public object addClientApply(ClientApply clientApply)
         {
             return this.productDAL.addClientApply(clientApply);
+        }
+
+        public ClientApply getClientApplyByPhoneAndUsername(ClientApply obj)
+        {
+            return this.productDAL.getClientApplyByPhoneAndUsername(obj);
+        }
+
+        public bool UpdateEmailStatus(ClientApply obj)
+        {
+            return this.productDAL.UpdateEmailStatus(obj);
         }
     }
 }

@@ -10,6 +10,7 @@
 
         <div class="product-intro-detail float-left box-shadow-2px">
             <hr class="red-hr">
+            <!--
             <p class="product-intro-title">@Product.name</p>
             <div class="product-intro-detail-form">
                 <p>
@@ -37,6 +38,8 @@
                     </div>
                 </p>
             </div>
+             -->
+            <iframe id="detail_iframe" src="ToDetail?productUrl=@Product.productUrl" width="100%" frameborder="0"></iframe>
             <p class="product-intro-apply">
                 <a href="javascript:void(0);">立即申请</a>
             </p>
@@ -74,6 +77,10 @@
     // 产品申请
     $(".product-intro-apply a").click(function () {
         clientApply(Window.JxWebSite.ClientApplyType.ProductApply, "@Product.name", "@Product.id");
+    });
+
+    $("#detail_iframe").load(function () {
+        this.height = this.contentDocument.body.scrollHeight + 15;
     });
 
 </script>

@@ -7,12 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="吉信金融/前海吉信/吉信借款/吉信互联网金融/小额贷款/信用贷款/无抵押/无担保 ">
     <meta name="description" content=" 吉信金融是一家致力于普惠金融的专业小微贷款服务公司，以协助银行、p2p平台、各类非银行机构为小微企业、个体工商户及中低收入人群提供快速简便、免抵押、免担保小微贷款服务为宗旨。">
+    <meta name="author" content="Hunter" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/modernizr")    
+    @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/constants")
-    <script type="text/javascript" src="/Plugins/layer/layer.js"></script>
+
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?760d00b8c5fb88b2d3a9880e4ef6b6da";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 </head>
 <body>
 
@@ -140,7 +150,9 @@
                 cancel: function () {
                     // 当取消弹出客户申请窗体的时候，要调用Home对象的makeOnlineForm方法，将表单借给首页使用
                     layer.close(clientApplyLayerId);
-                    Window.JxWebSite.Home.makeOnlineForm();
+                    if (Window.JxWebSite.Home && Window.JxWebSite.Home.makeOnlineForm) {
+                        Window.JxWebSite.Home.makeOnlineForm.call(this);
+                    }
                 }
             });
 
@@ -149,6 +161,8 @@
             // 如果是产品申请，需要保存产品ID到后台
             if(type == Window.JxWebSite.ClientApplyType.ProductApply){
                 clientApplyObj.productId = arguments[2];
+            } else {
+                clientApplyObj.productId = "";
             }
         }
 
@@ -215,6 +229,11 @@
                             skin: "layer-ext-seaing"
                         });
                         layer.close(clientApplyLayerId);
+                    } else {
+                        layer.alert(msg.Msg, {
+                            icon: 0,
+                            skin: "layer-ext-seaing"
+                        });
                     }
 
                     clearForm();
@@ -223,6 +242,8 @@
                     if (callback && typeof callback == "function") {
                         callback.call(this,msg);
                     }
+
+                    Window.JxWebSite.Home.makeOnlineForm();
                 }
             });
         }
@@ -230,6 +251,11 @@
         // 客户申请提交事件
         function clientApplyClickEvent() {
             commitClientFormData(getClientApplyForm());
+        }
+
+        // 打开城市选择框
+        function openCityPicker(event) {
+            SelCity(event.target, event);
         }
 
         ; (function () {
@@ -270,5 +296,13 @@
         })();
 
     </script>
+
+    <script src="/Plugins/layer/layer.js"></script>
+    <link href="/Plugins/layer/skin/layer.css" rel="stylesheet" />
+
+    <script src="/Plugins/city-picker/js/city-data.js"></script>
+    <script src="/Plugins/city-picker/js/citySet.js"></script>
+    <script src="/Plugins/city-picker/js/Popt.js"></script>
+    <link href="/Plugins/city-picker/css/city-picker.css" rel="stylesheet" />
 </body>
 </html>

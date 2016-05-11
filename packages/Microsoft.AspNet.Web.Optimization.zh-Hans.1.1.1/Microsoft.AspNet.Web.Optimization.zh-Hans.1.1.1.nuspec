@@ -10,6 +10,8 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>此程序包包含适用于 ASP.NET Web Optimization 的简体中文附属程序集。</description>
     <summary>适用于 Microsoft.AspNet.Web.Optimization 程序包的简体中文资源</summary>
+    <releaseNotes />
+    <copyright />
     <language>zh-Hans</language>
     <tags>Microsoft AspNet optimization bundling minification</tags>
     <dependencies>
