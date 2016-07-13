@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="http://unslider.com/unslider/dist/js/unslider-min.js"></script>
+<link rel="stylesheet" href="http://unslider.com/unslider/dist/css/unslider.css">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+
+    <div class="banner" id="banner" style="height:400px;">
+        <ul>
+            <li><img src="http://unslider.com/img/cat5.jpg" alt="" /></li>
+            <li><img src="http://unslider.com/img/cat6.jpg" alt="" /></li>
+            <li><img src="http://unslider.com/img/cat3.jpg" alt="" /></li>
+            <li><img src="http://unslider.com/img/cat2.jpg" alt="" /></li>
+        </ul>
+    </div>
+
+    <script>
+
+        $('.banner').unslider({
+            animation: 'fade', autoplay: true, arrows: false
+        });
+    </script>
+</body>
+</html>

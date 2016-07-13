@@ -1,19 +1,34 @@
 ﻿@{
     ViewBag.Title = "专业成就普惠金融 - 吉信金融";
 }
+
+<link href="/Plugins/unslider/css/unslider.css" rel="stylesheet" />
+<script src="/Plugins/unslider/js/unslider.js"></script>
+
 <!-- 首页banner -->
 <section class="home-banner">
-    <img src="../../images/banner01.png" alt="" width="100%" height="100%" data-id="01" onclick="location.href='/Home#online_apply_wrap'"/>
-    <img src="../../images/banner02.png" alt="" width="100%" height="100%" data-id="02" style="display:none" />
-    <img src="../../images/banner03.png" alt="" width="100%" height="100%" data-id="03" style="display:none" />
-    <div class="swap-banner-wrap">
-        <div class="swap-btn">
-            @*<img class="current" src="../../images/banner01.png" width="80" height="50" data-sort="1" />
-            <img src="../../images/banner02.png" width="80" height="50" data-sort="2">
-            <img src="../../images/banner03.png" width="80" height="50" data-sort="3">*@
+
+    <div class="banner" id="banner">
+        <ul>
+            <li>
+                <a href="javascript:void(0);" onclick="Window.JxWebSite.Home.toOnlineApply()"><img src="../../images/banner01.png" alt="" /></a>
+            </li>
+            <li>
+                <a href="~/App?nav=70"><img src="../../images/banner02.png" alt="" /></a>
+            </li>
+        </ul>
+
+        <div class="swap-banner-wrap">
+            <div class="swap-btn">
+                <img class="current" src="../../images/banner01.png" width="80" height="50" data-sort="1" />
+                <img src="../../images/banner02.png" width="80" height="50" data-sort="2">
+            </div>
         </div>
     </div>
+
 </section>
+
+
 <!-- end首页banner -->
 <!-- 特别消息显示区域 -->
 <section class="info">
@@ -33,14 +48,6 @@
         <nav class="product-nav">
             <ul>
                 <li><a href="/Product?nav=30">产品中心</a></li>
-                <!--
-                <li class="current">生意e代</li>
-                <li>精英e代</li>
-                <li>优薪e代</li>
-                <li>代发e代</li>
-                <li>保单e代</li>
-                <li>房产e代</li>
-                    -->
             </ul>
         </nav>
     </div>
@@ -57,18 +64,18 @@
                 </div>
                 <div class="product-detail-descript">
                     <p>@product.name</p>
-                    <p>额度：@product.maxlimit 万</p>
-                    <p>期数：@product.periods 期</p>
-                    <p>适应群体：@product.fitGroup</p>
+                    <p>贷款额度：@product.maxlimit</p>
+                    <p>贷款期数：@product.periods</p>
+                    <p>客户群体：@product.fitGroup</p>
                 </div>
             }
             else
             {
                 <div class="product-detail-descript">
                     <p>@product.name</p>
-                    <p>额度：@product.maxlimit 万</p>
-                    <p>期数：@product.periods 期</p>
-                    <p>适应群体：@product.fitGroup</p>
+                    <p>贷款额度：@product.maxlimit</p>
+                    <p>贷款期数：@product.periods</p>
+                    <p>客户群体：@product.fitGroup</p>
                 </div>
                 <div class="product-detail-img">
                     <img src="@product.homePicUrl" alt="@product.name" title="@product.name" width="100%" height="100%" />
@@ -77,91 +84,6 @@
             </div>
             i++;
         }
-        <!--
-        <div class="float-left product-detail-box">
-            <div class="product-detail-descript">
-                <p>房产e代</p>
-                <p>额度：1-50万</p>
-                <p>期数：6-24期</p>
-                <p>适应群体：年龄22-58周岁，有购买人寿保险年龄22-58周岁，有购买人寿保险年龄22-58周岁，有购买人寿保险</p>
-            </div>
-            <div class="product-detail-img">
-                <img src="/Images/home_fced.gif" alt="Alternate Text" width="100%" height="100%" />
-            </div>
-        </div>
-
-        <div class="float-left product-detail-box">
-            <div class="product-detail-img">
-                <img src="/Images/home_yxed.gif" alt="Alternate Text" width="100%" height="100%" />
-            </div>
-            <div class="product-detail-descript">
-                <p>房产e代</p>
-                <p>额度：1-50万</p>
-                <p>期数：6-24期</p>
-                <p>适应群体：年龄22-58周岁，有购买人寿保险年龄22-58周岁，有购买人寿保险年龄22-58周岁，有购买人寿保险</p>
-            </div>
-        </div>
-        <div class="float-left product-detail-box">
-            <div class="product-detail-descript">
-                <p>房产e代</p>
-                <p>额度：1-50万</p>
-                <p>期数：6-24期</p>
-                <p>适应群体：年龄22-58周岁，有购买人寿保险年龄22-58周岁，有购买人寿保险年龄22-58周岁，有购买人寿保险</p>
-            </div>
-            <div class="product-detail-img">
-                <img src="/Images/home_syed.gif" alt="Alternate Text" width="100%" height="100%" />
-            </div>
-        </div>
-        <div class="float-left product-detail-box">
-            <div class="product-detail-img">
-                <img src="/Images/home_jyed.gif" alt="Alternate Text" width="100%" height="100%" />
-            </div>
-            <div class="product-detail-descript">
-                <p>房产e代</p>
-                <p>额度：1-50万</p>
-                <p>期数：6-24期</p>
-                <p>适应群体：年龄22-58周岁，有购买人寿保险年龄22-58周岁，有购买人寿保险年龄22-58周岁，有购买人寿保险</p>
-            </div>
-        </div>
-            -->
-        <!--
-        <div class="row">
-            <div class="cell" style="background:#FF0000">
-                <span class="product-detail-btn">了解详情</span>
-                <div style="background:url('../../images/product1.png') no-repeat;background-size:cover; width:252px;height:210px;"></div>
-            </div>
-            <div class="cell" style="background:#FF0000">
-                <span class="product-detail-btn">了解详情</span>
-                <div style="background:url('../../images/product2.png') no-repeat;background-size:cover; width:252px;height:210px;"></div>
-            </div>
-            <div class="cell" style="background:#FF0000">
-                <span class="product-detail-btn">了解详情</span>
-                <div style="background:url('../../images/product1.png') no-repeat;background-size:cover; width:252px;height:210px;"></div>
-            </div>
-            <div class="cell" style="background:#FF0000">
-                <span class="product-detail-btn">了解详情</span>
-                <div style="background:url('../../images/product2.png') no-repeat;background-size:cover; width:252px;height:210px;"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="cell" style="background:#FF0000">
-                <span class="product-detail-btn">了解详情</span>
-                <div style="background:url('../../images/product2.png') no-repeat;background-size:cover; width:252px;height:210px;"></div>
-            </div>
-            <div class="cell" style="background:#FF0000">
-                <span class="product-detail-btn">了解详情</span>
-                <div style="background:url('../../images/product1.png') no-repeat;background-size:cover; width:252px;height:210px;"></div>
-            </div>
-            <div class="cell" style="background:#FF0000">
-                <span class="product-detail-btn">了解详情</span>
-                <div style="background:url('../../images/product2.png') no-repeat;background-size:cover; width:252px;height:210px;"></div>
-            </div>
-            <div class="cell" style="background:#FF0000">
-                <span class="product-detail-btn">了解详情</span>
-                <div style="background:url('../../images/product1.png') no-repeat;background-size:cover; width:252px;height:210px;"></div>
-            </div>
-        </div>
-            -->
     </div>
 </section>
 <!-- end产品中心区域 -->
@@ -184,50 +106,6 @@
     <!-- 在线预约 -->
     <section class="online-apply-wrap float-right" id="online_apply_wrap">
         <div class="online-apply-form-wrap">
-            @*
-            @Html.Partial("../Product/ClientApply", ViewBag.clientApply as IEnumerable<jx_website.Web.Models.ClientApply>,
-                 new ViewDataDictionary { { "applyTitle", "在线预约" }, { "style", "display:block" }, { "titleStyleClass", "online_apply_title" } })
-            *@
-            <!--
-            <form action="" method="post" id="h_ClientApplyForm" class="clientApplyForm" style="display:block;">
-                <table border="0" width="100%" height="100%">
-                    <tr>
-                        <td colspan="2" class="online_apply_title">在线预约</td>
-                    </tr>
-                    <tr>
-                        <td class="form-label">姓名：</td>
-                        <td>
-                            <input type="text" name="usernmae" id="h_username" class="input-text">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="form-label">性别：</td>
-                        <td>
-                            <input type="radio" name="sex" value="男" id="h_sex1" checked style="border:0"><label for="h_sex1" style="padding-left:10px;">男</label>
-
-                            <input type="radio" name="sex" value="女" id="h_sex0" style="margin-left:30px;border:0;"><label for="h_sex0" style="padding-left:10px;">女</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="form-label">联系电话：</td>
-                        <td>
-                            <input type="text" name="phone" id="h_phone" class="input-text">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="form-label">现居住城市：</td>
-                        <td>
-                            <input type="text" name="address" id="h_address" class="input-text">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="text-align:center">
-                            <span class="submit" id="h_online_apply_btn">提交</span>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-                -->
         </div>
     </section>
 </section>
@@ -254,14 +132,13 @@
 </section>
 <!-- end品牌宣传 -->
 <!-- 品质宣传 -->
-<section class="quality-publicity">
-    <img src="../images/quality.png" alt="平台特性" width="100%" height="100%"/>
-    <!-- <div class="quality-publicity-wrap">
+<section class="quality-publicity" style="background: url('../images/background.png')">
+     <div class="quality-publicity-wrap">
         <img src="../../images/quality1.png" alt="国内网络" width="248" height="120"/>
-        <img src="../../images/quality1.png" alt="在线留言" width="248" height="120"/>
-        <img src="../../images/quality1.png" alt="专业服务" width="248" height="120"/>
-        <img src="../../images/quality1.png" alt="品质保证" width="248" height="120"/>
-    </div> -->
+        <img src="../../images/quality2.gif" alt="在线预约" width="248" height="120" style="cursor:pointer;" onclick="Window.JxWebSite.Home.toOnlineApply()"/>
+        <img src="../../images/quality3.png" alt="专业服务" width="248" height="120"/>
+        <img src="../../images/quality4.png" alt="品质保证" width="248" height="120"/>
+    </div> 
 </section>
 <!-- end品质宣传 -->
 <!-- 友情连接 -->
@@ -284,6 +161,7 @@
 <!-- end友情连接 -->
 
 <script type="text/javascript">
+
     ; $(function () {
 
         var home = function (opts) {
@@ -308,122 +186,63 @@
             },
             _isBrowser: function () {
                 var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
-                //alert(userAgent);
             },
             _initEvent: function () {
-                /**初始化所有事件**/
-
-                // 初始化首页banner切换按钮事件
-                this._initBannerSwapEvent();
 
                 // 产品明细鼠标移入移出事件
                 this._initProductDetailEvent();
-
-                // 窗体滚动事件
-                //this._initWindowScroll();
-
-                /**
-                $("#h_online_apply_btn").click(function () {
-
-                    var username = $("#h_username").val();
-                    var sex = $("input[name='sex']:checked").val();
-                    var phone = $("#h_phone").val();
-                    var address = $("#h_address").val();
-
-                    // 提交申请数据
-                    commitClientFormData({
-                        type:Window.JxWebSite.ClientApplyType.ClientSubscribe,
-                        username: username,
-                        sex: sex,
-                        phone: phone,
-                        address: address,
-                        productId:""
-                    }, function (obj) {
-                        $("#h_username").val("");
-                        $("input[name='sex']:checked").val("");
-                        $("#h_phone").val("");
-                        $("#h_address").val("");
-                    });
-                });
-                **/
 
                 $(".product-detail-box").click(function () {
                     location.href ="/Product/Detail?nav=30&id="+$(this).data("product-id");
                 });
             },
-            _initWindowScroll: function () {
-                $(window).scroll(function () {
-                    var $top = $(".top");
-                    var $header = $(".header");
-                    if ($(document).scrollTop() > 115) {
-                        //$top.addClass("top-fixed");
-                        $header.addClass("header-fixed");
-                    } else {
-                        //$top.removeClass("top-fixed");
-                        $header.removeClass("header-fixed");
-                    }
-                });
-            },
             _initProductDetailEvent: function () {
-
-                // 产品明细鼠标移入移出事件
-                /**
-                $(".product-detail-wrap .cell").hover(function () {
-                    var $this = $(this);
-                    var _childrenList = $this.children();
-                    $(_childrenList[1]).css("display", "none");
-                    $(_childrenList[0]).css("display", "block");
-                }).mouseleave(function () {
-                    var $this = $(this);
-                    var _childrenList = $this.children();
-                    $(_childrenList[0]).css("display", "none");
-                    $(_childrenList[1]).css("display", "block");
-                    //$(_childrenList[0]).fadeToggle("slow");
-                    //$(_childrenList[1]).fadeIn("slow");
-                });
-                **/
-
                 $(".product-detail-box").hover(function () {
                     $(this).find(".product-detail-btn-wrap").show();
                 }).mouseleave(function () {
                     $(this).find(".product-detail-btn-wrap").hide();
                 });
             },
-            // 初始化首页banner切换按钮事件
-            _initBannerSwapEvent: function () {
-                var _this = this;
-                //banner按钮切换
-                $(".swap-btn").find("img").click(function (a, b, c) {
-                    _this.bannerSwapIdx = parseInt($(this).data("sort")) - 1;
-                    _this._initBanner();
-                });
-            },
             // 初始化首页banner
             _initBanner: function () {
-                var $swapbtn = $(".swap-btn");
-                var imgList = $swapbtn.find("img");
-                var checkedImg = $(imgList[this.bannerSwapIdx++]);
+
                 var _this = this;
-                $swapbtn.parent().prevAll().each(function (idx, obj) {
-                    var _$obj = $(obj);
-                    _$obj.css("display", (_$obj.data("id") == "0" + (_this.bannerSwapIdx))?"block":"none");
+
+                var slidey  = $('#banner').unslider({
+                    speed: 500,
+                    delay: 3000,
+                    complete: function () {
+                        //_this._changeBannerBtn(slidey.data('unslider').current + 1);
+                        _this._changeBannerBtn(arguments[1] + 1);
+                    },
+                    keys: true,
+                    dots: true,
+                    fluid: true
                 });
-                // $swapbtn.parent().parent().css({ "background-image": "url('" + checkedImg.attr("src") + "')", "background-repeat": "no-repeat" });
 
-                for (var i = 0; i < imgList.length; i++) {
-                    $(imgList[i]).removeClass("current");
-                }
-                checkedImg.addClass("current");
 
-                if (this.bannerSwapIdx >= imgList.length) {
-                    this.bannerSwapIdx = 0;
-                }
+                //banner按钮切换
+                $(".swap-btn").find("img").click(function (a, b, c) {
+                    var i = parseInt($(this).data("sort"));
+                    _this._changeBannerBtn(i);
+
+                    slidey.data('unslider').move( i-1 );
+                    
+                });
+
+            },
+            _changeBannerBtn: function(){
+
+                $(".swap-btn").find("img").removeClass('current');
+
+                $(".swap-btn").find("img[data-sort='" + arguments[0] + "']").addClass('current');
+
             },
             _initTimeout: function () {
-                //初始化首页banner滚动定时器
+                // 初始化首页banner滚动定时器
                 this.setIntervalBack(this._initBanner, null, 3000, this);
 
-                // 每隔10分钟刷新一次借款信息(基本没啥意义)
+                // 每隔10分钟刷新一次借款信息
                 this.setIntervalBack(this.loadBorrowInfo, null, 30000, this);
             },
             setIntervalBack: function (callback, args, time, _this) {
@@ -468,8 +287,11 @@
                         }
                     }
                 });
-
-
+            },
+            toOnlineApply: function () { // 到在线预约
+                $("body").animate({
+                    scrollTop: $("#online_apply_wrap").offset().top
+                }, 500);
             }
         }
 

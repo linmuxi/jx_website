@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" /> 
+	<title>App下载</title>
+    <style>
+        html,body{
+            height:100%;
+            margin:0px;
+        }
+
+        table {
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            background-color: #283A4B;
+            background: -webkit-linear-gradient(bottom,#283A4B,#3D6783);
+            background: -moz-linear-gradient(bottom,#283A4B,#3D6783);
+            background: -o-linear-gradient(bottom,#283A4B,#3D6783);
+        }
+
+        table img:first-child {
+            margin-bottom:100px;
+        }
+
+        table p {
+            color: #3b7a97;
+            font-weight:bold;
+            position:fixed;
+            bottom:10px;
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <img src="/Images/app-head-logo.png" width="90%" height="30%">
+                <a href="#" id="app_download_btn"><img src="/Images/download.png" width="85%" height="10%" /></a>
+                <p>深圳市前海吉信互联网金融服务有限公司</p>
+            </td>
+        </tr>
+    </table>
+ 
+</body>
+<script>
+    //判断访问终端
+    var browser = {
+        versions: function () {
+            var u = navigator.userAgent, app = navigator.appVersion;
+            return {
+                trident: u.indexOf('Trident') > -1, //IE内核
+                presto: u.indexOf('Presto') > -1, //opera内核
+                webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
+                mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                android: u.indexOf('Android') > -1 || u.indexOf('Adr') > -1, //android终端
+                iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
+                iPad: u.indexOf('iPad') > -1, //是否iPad
+                webApp: u.indexOf('Safari') == -1, //是否web应该程序，没有头部与底部
+                weixin: u.indexOf('MicroMessenger') > -1, //是否微信 （2015-01-22新增）
+                qq: u.match(/\sQQ/i) == " qq" //是否QQ
+            };
+        }(),
+        language: (navigator.browserLanguage || navigator.language).toLowerCase()
+    }
+
+    var appbtn = document.getElementById("app_download_btn");
+    var url = "";
+    if (browser.versions.android) {
+        url = "https://app.jxjust.com/Helper/Download"; // android app
+    } else if (browser.versions.iPhone || browser.versions.iPad) {
+        url = "https://itunes.apple.com/cn/app/ji-xin-gan-dai/id1129682558?mt=8";    // ios app
+        //appbtn.firstChild.src = "/Images/download_pre.png";
+    }
+    appbtn.href = url;
+</script>
+</html>

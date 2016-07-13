@@ -133,7 +133,15 @@ namespace jx_website.Web.Controllers
                     toMailAddress = dept.email;
                 }
 
-                EmailUtil email = new EmailUtil(server, toMailAddress, fromEmail, subject, body, username, password, port, false, false);
+                string[] ccMail = null;
+
+                var ccMailList = appSettings["ccMail"].ToString();
+                if (ccMailList != null && ccMailList.Length > 0)
+                {
+                    ccMail = ccMailList.Split(new char[] { ';' });
+                }
+
+                EmailUtil email = new EmailUtil(server, toMailAddress, fromEmail, ccMail, subject, body, username, password, port, false, false);
                 email.Send();
 
                 // 发送完成后更新状态
@@ -170,18 +178,26 @@ namespace jx_website.Web.Controllers
         ///<param name="port">发送邮件所用的端口号（htmp协议默认为25）</param>
         ///<param name="sslEnable">true表示对邮件内容进行socket层加密传输，false表示不加密</param>
         ///<param name="pwdCheckEnable">true表示对发件人邮箱进行密码验证，false表示不对发件人邮箱进行密码验证</param>
-        public EmailUtil(string server, string toMail, string fromMail, string subject, string emailBody, string username, string password, string port, bool sslEnable, bool pwdCheckEnable)
+        public EmailUtil(string server, string toMail, string fromMail,string[] ccMail, string subject, string emailBody, string username, string password, string port, bool sslEnable, bool pwdCheckEnable)
         {
             try
             {
                 mMailMessage = new MailMessage();
                 mMailMessage.To.Add(toMail);
                 mMailMessage.From = new MailAddress(fromMail);
+
+                MailAddressCollection ccs = mMailMessage.CC;
+                if(ccMail != null && ccMail.Length > 0){
+                    foreach(string mail in ccMail){
+                        ccs.Add(new MailAddress(mail));
+                    }
+                }
+
                 mMailMessage.Subject = subject;
                 mMailMessage.Body = emailBody;
                 mMailMessage.IsBodyHtml = true;
                 mMailMessage.BodyEncoding = System.Text.Encoding.UTF8;
-                mMailMessage.Priority = MailPriority.Normal;
+                mMailMessage.Priority = MailPriority.Normal;                
                 this.mSenderServerHost = server;
                 this.mSenderUsername = username;
                 this.mSenderPassword = password;

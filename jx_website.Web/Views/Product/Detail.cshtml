@@ -10,36 +10,36 @@
 
         <div class="product-intro-detail float-left box-shadow-2px">
             <hr class="red-hr">
-            <!--
+            
             <p class="product-intro-title">@Product.name</p>
             <div class="product-intro-detail-form">
                 <p>
-                    <label for="">额度：</label><span style="padding-left: 31px;">@Product.maxlimit 万</span>
+                    <label for="">贷款额度：</label><span style="padding-left: 31px;">@Product.maxlimit</span>
                 </p>
                 <p>
-                    <label for="">期数：</label><span style="padding-left: 31px;">@Product.periods 期</span>
+                    <label for="">贷款期数：</label><span style="padding-left: 31px;">@Product.periods</span>
                 </p>
                 <p>
-                    <label for="">月费率：</label><span style="padding-left: 15px;">低至 @Product.monthRate %</span>
+                    <label for="">月综合费率：</label><span style="padding-left: 15px;">@Product.monthRate</span>
                 </p>
                 <p>
-                    <label for="">适合群体：</label><span style="padding-left: 1px;">@Product.fitGroup</span>
+                    <label for="">客户群体：</label><span style="padding-left: 31px;">@Product.fitGroup</span>
                 </p>
                 <p>
                     <label for="">申请条件：</label>
-                    <div style="padding-left: 80px;">
+                    <div style="padding-left: 105px;">
                         @Product.applyCondition
                     </div>
                 </p>
                 <p>
                     <label for="">申请资料：</label>
-                    <div style="padding-left: 80px;">
+                    <div style="padding-left: 105px;">
                         @Product.applyData
                     </div>
                 </p>
             </div>
-             -->
-            <iframe id="detail_iframe" src="ToDetail?productUrl=@Product.productUrl" width="100%" frameborder="0"></iframe>
+             
+            @*<iframe id="detail_iframe" src="ToDetail?productUrl=@Product.productUrl" width="100%" frameborder="0"></iframe>*@
             <p class="product-intro-apply">
                 <a href="javascript:void(0);">立即申请</a>
             </p>

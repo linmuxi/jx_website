@@ -80,7 +80,7 @@ ul{
 .header-menu ul li{
 	float:left;
 	height: 85px;
-	width: 100px;
+	width: 90px;
 	text-align: center;
 	line-height: 85px;
     transition:all 0.3s;
@@ -117,7 +117,7 @@ ul{
 
 /*banner*/
 .home-banner{
-	/*height: 570px;*/
+	height: 570px;
 	position: relative;
 	/*background-size: cover;*/
 }
@@ -130,7 +130,7 @@ ul{
 	height: 70px;
 	background-color: rgba(54,53,51,0.7);
 
-    display:none;
+    /*display:none;*/
 }
 
 .swap-btn{
@@ -581,6 +581,10 @@ ul{
 	padding: 20px 10px 0 0;
 }
 
+.code p{
+    padding-bottom:5px;
+}
+
 /*end footer*/
 
 .float-left{
@@ -765,7 +769,7 @@ ul{
 	background-color: #FFF;
 	font-size: 13px;
 	padding: 10px;
-	line-height: 1.5em;
+	line-height: 1.6em;
 	color: #5f5f5f;
     height:100px;
     overflow:hidden;
@@ -1347,3 +1351,140 @@ ul{
 
 /**  end 客户申请 */
 
+.toTop{
+    width: 45px; height: 45px; position: fixed; right: 20px; bottom: 30px; cursor: pointer; 
+    background: url('../images/toTop.png'); background-repeat:no-repeat;
+    display:none;
+}
+
+/*首页浮动*/
+@font-face {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: normal;
+  src: url("/Plugins/font-awesome-4.6.3/fonts/fontawesome-webfont.eot?#iefix") format('embedded-opentype'), url("/Plugins/font-awesome-4.6.3/fonts/fontawesome-webfont.woff") format('woff'), url("/Plugins/font-awesome-4.6.3/fonts/fontawesome-webfont.ttf") format('truetype'), url("/Plugins/font-awesome-4.6.3/fonts/fontawesome-webfont.svg#FontAwesomeRegular") format('svg');
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'FontAwesome' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-up:before{
+	content: '\f077';
+}
+.icon-zxauthorization:before {
+	content: '\f02d';
+}
+.icon-appdownload:before {
+	content: '\f17b';
+}
+.icon-wxgzh:before {
+	content: '\f1d7';
+}
+
+/*回到顶部*/
+.elevator {
+  position: fixed;
+  padding: 0 15px;
+  bottom: 20px;
+  right: 0;
+  z-index: 1000;
+  background-color: #fff;
+  /*box-shadow: -2px 2px 2px 2px #f3f3f3;*/
+  /*box-shadow:1px 1px 2px 2px #f3f3f3;*/
+   border: 0px solid #f5f3f3;
+}
+.elevator a {
+  display: block;
+  width: 26px;
+  padding: 12px 0;
+  font-size: 12px;
+  line-height: 20px;
+  /*color: #787d82;*/
+  text-align: center;
+  border-bottom: 1px solid #edf1f2;
+  text-decoration: none;
+}
+.elevator a:hover {
+  /*color: #14191e;*/
+}
+.elevator a i {
+  font-size: 24px;
+  /*color: #b5b9bc;*/
+  color: #e51e1b;
+}
+.elevator a i:hover {
+  /*color: #14191e;*/
+  color: #787d82;
+}
+.elevator .elevator-app-box {
+  position: absolute;
+  width: 172px;
+  height: 194px;
+  bottom: -10px;
+  right: 52px;
+  -webkit-transition: opacity 0.25s, transform .3s;
+  -moz-transition: opacity 0.25s, transform .3s;
+  transition: opacity 0.25s, transform .3s;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  max-width: 0;
+  -webkit-transform: scale(0.01);
+  -ms-transform: scale(0.01);
+  transform: scale(0.01);
+  -webkit-transform-origin: 100% 95%;
+  -ms-transform-origin: 100% 95%;
+  transform-origin: 100% 95%;
+  background: url(/Images/elevator.png) no-repeat 0 -220px;
+}
+.elevator .elevator-app:hover .elevator-app-box {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  max-width: none;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+.elevator .elevator-weixin-box {
+  position: absolute;
+  width: 172px;
+  height: 212px;
+  bottom: -10px;
+  right: 52px;
+  -webkit-transition: opacity 0.25s, transform .3s;
+  -moz-transition: opacity 0.25s, transform .3s;
+  transition: opacity 0.25s, transform .3s;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  max-width: 0;
+  -webkit-transform: scale(0.01);
+  -ms-transform: scale(0.01);
+  transform: scale(0.01);
+  -webkit-transform-origin: 100% 95%;
+  -ms-transform-origin: 100% 95%;
+  transform-origin: 100% 95%;
+  background: url(/Images/elevator.png) no-repeat 0 0;
+}
+.elevator .elevator-weixin:hover .elevator-weixin-box {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  max-width: none;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}

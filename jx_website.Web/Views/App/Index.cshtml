@@ -1,0 +1,198 @@
+﻿@{
+    ViewBag.Title = "吉信敢贷";
+}
+
+<style>
+    .app-head-bg {
+        height: 300px;
+        background-color: #283A4B;
+        background: -webkit-linear-gradient(top,#283A4B,#3D6783);
+        background: -moz-linear-gradient(top,#283A4B,#3D6783);
+        background: -o-linear-gradient(top,#283A4B,#3D6783);
+    }
+
+    .app-head-inner-bg{
+        width:1010px;
+        height:100%;
+        margin:0 auto;
+    }
+
+    .app-head-inner-bg img{
+        padding-top:40px;
+    }
+
+    .app-head-inner-bg .app-download{
+        height:100%;
+        float:right;
+    }
+
+    .app-download figure {
+        float: left;
+        padding: 60px 40px 0px 40px;
+        color: #53B7E5;
+        text-align:center;
+        font-size:16px;
+    }
+
+    .app-download figure img {
+        background-color: #3F6C89;
+        padding: 10px;
+        margin-bottom:10px;
+    }
+
+    .app-step-wrap {
+        height: 430px;
+        background-color: #EDEDED;
+    }
+
+    .app-step-inner{
+        width: 1010px;
+        margin: 0 auto;
+        text-align:center;
+    }
+
+    .app-step-wrap img {
+        /*float: left;
+        padding: 40px 0px 30px 0px;*/
+    }
+
+    .app-download .app-btn-download{
+        float:left;
+        padding-top:40px;
+        padding-right:20px;
+    }
+
+    .app-btn-download img{
+        display:block;
+
+    }
+
+    .app-step {
+        width: 230px;
+        background-color: #FFF;
+        margin: 40px 22px 0px 0px;
+        position: relative;
+        float: left;
+    }
+
+    .app-step img {
+        position: absolute;
+        top: -30px;
+        left: 80px;
+    }
+
+    .app-step .label1 {
+        padding: 80px 0px 0px 0px;
+        font-weight: bold;
+        color: #666666;
+    }
+
+    .app-step .label2 {
+        padding: 20px 0px 100px 0px;
+        color: #666666;
+    }
+
+    .app-step .label3 {
+        padding: 20px 0px;
+        color: #FF0000;
+        font-size: 1.2em;
+    }
+
+    .app-step hr {
+        height: 1px;
+        background-color: #EDEDED;
+    }
+
+    .app-step-hr-hover {
+        background-color: #FF0000 !important;
+    }
+
+</style>
+
+<section class="app-head-bg">
+    <section class="app-head-inner-bg">
+        <img src="/Images/app-head-logo.png" />
+        <div class="app-download">
+            <figure>
+                <img src="/Images/app-download-page.png" alt="App下载" width="150" height="150" />
+                @*<p>Android端下载</p>*@
+            </figure>
+            @*<figure>
+                <img src="/Images/app-android.png" alt="IOS端下载" width="150" height="150" />
+                <p>IOS端下载</p>
+            </figure>*@
+            <div class="app-btn-download">
+                <a href="https://itunes.apple.com/cn/app/ji-xin-gan-dai/id1129682558?mt=8" target="_blank"><img src="/Images/ios_download.png" alt="IOS下载" /></a>
+                <a href="https://app.jxjust.com/Helper/Download" target="_blank"><img src="/Images/android_download.png" alt="Android下载" /></a>
+            </div>
+        </div>
+    </section>
+</section>
+
+<section class="app-step-wrap">
+    <section class="app-step-inner">
+        @*<a href="/download/征信授权书.zip" target="_blank"><img src="/Images/app-step1.png" alt="步骤1" /></a>
+        <a href="/download/填写模板.zip" target="_blank"><img src="/Images/app-step2.png" alt="步骤2"></a>
+        <a href="~/App/Guide?nav=70" target=""><img src="/Images/app-step3.png" alt="步骤3" /></a>
+        <a href="~/App/DetailAddress?nav=70" target=""><img src="/Images/app-step4.png" alt="步骤4" /></a>*@
+
+        <p>&nbsp;</p>
+
+        <a href="/download/征信授权书.zip" target="_blank">
+            <div class="app-step">
+                <img src="/Images/app-guid-step-01.png" />
+                <p class="label1">第一步</p>
+                <p class="label2">下载征信授权书</p>
+                <hr />
+                <p class="label3">点击下载</p>
+            </div>
+        </a>
+
+        <a href="/download/填写模板.zip" target="_blank">
+            <div class="app-step">
+                <img src="/Images/app-guid-step-02.png" />
+                <p class="label1">第二步</p>
+                <p class="label2" style="padding-bottom:80px;">填写征信授权书<br />并在APP申请过程中上传</p>
+                <hr />
+                <p class="label3">模板下载</p>
+            </div>
+        </a>
+
+        <a href="~/App/Guide?nav=70" target="">
+            <div class="app-step">
+                <img src="/Images/app-guid-step-03.png" />
+                <p class="label1">第三步</p>
+                <p class="label2">APP申请提交</p>
+                <hr />
+                <p class="label3">操作指引</p>
+            </div>
+        </a>
+
+        <a href="~/App/DetailAddress?nav=70" target="">
+            <div class="app-step">
+                <img src="/Images/app-guid-step-04.png" />
+                <p class="label1">第四步</p>
+                <p class="label2">将征信授权书寄到总部</p>
+                <hr />
+                <p class="label3">详情地址</p>
+            </div>
+        </a>
+
+    </section>
+</section>
+
+<style>
+
+</style>
+
+<script>
+    $(".app-step").hover(function () {
+        $(this).find("hr").addClass("app-step-hr-hover");
+    });
+
+    $(".app-step").mouseover(function () {
+        $(this).find("hr").addClass("app-step-hr-hover");
+    }).mouseout(function () {
+        $(this).find("hr").removeClass("app-step-hr-hover");
+    });
+</script>

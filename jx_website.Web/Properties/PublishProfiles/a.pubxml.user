@@ -6,14 +6,14 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>E:\jxjust\官网\publish\20160510</_PublishTargetUrl>
+    <_PublishTargetUrl>E:\jxjust\官网\publish\20160712</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>04/21/2016 16:51:53</publishTime>
     </File>
     <File Include="bin/jx_website.Web.dll">
-      <publishTime>05/10/2016 14:21:32</publishTime>
+      <publishTime>07/12/2016 15:53:04</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.dll">
       <publishTime>04/21/2016 16:52:09</publishTime>
@@ -127,7 +127,10 @@
       <publishTime>03/14/2016 13:58:40</publishTime>
     </File>
     <File Include="Content/default.css">
-      <publishTime>05/03/2016 12:06:07</publishTime>
+      <publishTime>07/12/2016 14:43:32</publishTime>
+    </File>
+    <File Include="download/填写模板.zip">
+      <publishTime>07/07/2016 16:39:44</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>03/23/2016 17:44:12</publishTime>
@@ -147,8 +150,17 @@
     <File Include="Global.asax">
       <publishTime>03/14/2016 13:58:38</publishTime>
     </File>
+    <File Include="html/1.html">
+      <publishTime>07/12/2016 14:28:50</publishTime>
+    </File>
+    <File Include="html/AndroidDimensionCode.html">
+      <publishTime>07/08/2016 11:14:37</publishTime>
+    </File>
     <File Include="html/default.css">
       <publishTime>04/28/2016 10:29:16</publishTime>
+    </File>
+    <File Include="html/DimensionCode.html">
+      <publishTime>07/08/2016 15:31:52</publishTime>
     </File>
     <File Include="html/product_detail_bded.html">
       <publishTime>04/27/2016 16:37:04</publishTime>
@@ -165,17 +177,41 @@
     <File Include="html/product_detail_xjed.html">
       <publishTime>04/27/2016 17:07:20</publishTime>
     </File>
+    <File Include="Images/app-guid.png">
+      <publishTime>07/07/2016 12:00:18</publishTime>
+    </File>
+    <File Include="Images/app-head-logo.png">
+      <publishTime>07/07/2016 13:47:20</publishTime>
+    </File>
+    <File Include="Images/app-step1.png">
+      <publishTime>07/08/2016 08:51:54</publishTime>
+    </File>
+    <File Include="Images/app-step2.png">
+      <publishTime>07/07/2016 13:58:56</publishTime>
+    </File>
+    <File Include="Images/app-step3.png">
+      <publishTime>07/07/2016 13:58:56</publishTime>
+    </File>
+    <File Include="Images/app-step4.png">
+      <publishTime>07/07/2016 13:58:56</publishTime>
+    </File>
+    <File Include="Images/background.png">
+      <publishTime>05/11/2016 17:34:28</publishTime>
+    </File>
     <File Include="Images/banner01.png">
       <publishTime>03/09/2016 15:04:13</publishTime>
     </File>
     <File Include="Images/banner02.png">
-      <publishTime>03/09/2016 15:04:13</publishTime>
+      <publishTime>07/08/2016 15:12:28</publishTime>
     </File>
     <File Include="Images/banner03.png">
-      <publishTime>03/09/2016 15:04:13</publishTime>
+      <publishTime>03/09/2016 15:13:49</publishTime>
     </File>
     <File Include="Images/bjbank.png">
       <publishTime>12/25/2015 11:22:53</publishTime>
+    </File>
+    <File Include="Images/bjbank_logo.png">
+      <publishTime>06/24/2016 11:47:43</publishTime>
     </File>
     <File Include="Images/brand.png">
       <publishTime>03/25/2016 14:08:09</publishTime>
@@ -201,8 +237,17 @@
     <File Include="Images/department_bg.png">
       <publishTime>03/09/2016 15:13:49</publishTime>
     </File>
+    <File Include="Images/detail_address.png">
+      <publishTime>07/07/2016 12:01:31</publishTime>
+    </File>
     <File Include="Images/dm_item_1.png">
       <publishTime>03/08/2016 14:46:39</publishTime>
+    </File>
+    <File Include="Images/download.png">
+      <publishTime>07/08/2016 10:52:56</publishTime>
+    </File>
+    <File Include="Images/elevator.png">
+      <publishTime>06/24/2016 10:41:27</publishTime>
     </File>
     <File Include="Images/eltx.png">
       <publishTime>12/25/2015 11:24:47</publishTime>
@@ -230,6 +275,9 @@
     </File>
     <File Include="Images/hzbank.png">
       <publishTime>12/28/2015 09:18:24</publishTime>
+    </File>
+    <File Include="Images/hzbank_logo.png">
+      <publishTime>06/24/2016 11:47:54</publishTime>
     </File>
     <File Include="Images/joinus-contact-person.gif">
       <publishTime>03/09/2016 15:22:13</publishTime>
@@ -306,6 +354,9 @@
     <File Include="Images/product_triat_04.gif">
       <publishTime>03/09/2016 15:19:36</publishTime>
     </File>
+    <File Include="Images/product_xjed.png">
+      <publishTime>05/13/2016 16:57:26</publishTime>
+    </File>
     <File Include="Images/product_yfed.gif">
       <publishTime>03/10/2016 15:49:58</publishTime>
     </File>
@@ -320,6 +371,9 @@
     </File>
     <File Include="Images/quality1.png">
       <publishTime>12/25/2015 11:28:29</publishTime>
+    </File>
+    <File Include="Images/quality2.gif">
+      <publishTime>05/11/2016 16:32:48</publishTime>
     </File>
     <File Include="Images/quality2.png">
       <publishTime>12/25/2015 11:28:37</publishTime>
@@ -339,6 +393,9 @@
     <File Include="Images/tlzf.png">
       <publishTime>12/28/2015 09:24:23</publishTime>
     </File>
+    <File Include="Images/toTop.png">
+      <publishTime>05/11/2016 17:40:21</publishTime>
+    </File>
     <File Include="Images/zgbank.png">
       <publishTime>12/25/2015 11:24:57</publishTime>
     </File>
@@ -350,6 +407,129 @@
     </File>
     <File Include="packages.config">
       <publishTime>03/14/2016 16:42:06</publishTime>
+    </File>
+    <File Include="Plugins/city-picker/css/city-picker.css">
+      <publishTime>05/11/2016 13:54:11</publishTime>
+    </File>
+    <File Include="Plugins/city-picker/js/city-data.js">
+      <publishTime>05/11/2016 13:59:01</publishTime>
+    </File>
+    <File Include="Plugins/city-picker/js/citySet.js">
+      <publishTime>05/11/2016 09:01:42</publishTime>
+    </File>
+    <File Include="Plugins/city-picker/js/Popt.js">
+      <publishTime>05/11/2016 09:21:21</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/css/font-awesome.css">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/css/font-awesome.min.css">
+      <publishTime>05/13/2016 23:44:27</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/fonts/fontawesome-webfont.eot">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/fonts/fontawesome-webfont.svg">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/fonts/fontawesome-webfont.ttf">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/fonts/fontawesome-webfont.woff">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/fonts/fontawesome-webfont.woff2">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/fonts/FontAwesome.otf">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/HELP-US-OUT.txt">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/less/animated.less">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/less/bordered-pulled.less">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/less/core.less">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/less/fixed-width.less">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/less/font-awesome.less">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/less/icons.less">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/less/larger.less">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/less/list.less">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/less/mixins.less">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/less/path.less">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/less/rotated-flipped.less">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/less/screen-reader.less">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/less/stacked.less">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/less/variables.less">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/scss/font-awesome.scss">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/scss/_animated.scss">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/scss/_bordered-pulled.scss">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/scss/_core.scss">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/scss/_fixed-width.scss">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/scss/_icons.scss">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/scss/_larger.scss">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/scss/_list.scss">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/scss/_mixins.scss">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/scss/_path.scss">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/scss/_rotated-flipped.scss">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/scss/_screen-reader.scss">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/scss/_stacked.scss">
+      <publishTime>05/13/2016 23:44:26</publishTime>
+    </File>
+    <File Include="Plugins/font-awesome-4.6.3/scss/_variables.scss">
+      <publishTime>05/13/2016 23:44:26</publishTime>
     </File>
     <File Include="Plugins/layer/extend/layer.ext.js">
       <publishTime>03/15/2016 16:37:42</publishTime>
@@ -377,6 +557,12 @@
     </File>
     <File Include="Plugins/layer/skin/layer.ext.css">
       <publishTime>03/15/2016 16:37:42</publishTime>
+    </File>
+    <File Include="Plugins/unslider/css/unslider.css">
+      <publishTime>07/12/2016 14:43:37</publishTime>
+    </File>
+    <File Include="Plugins/unslider/js/unslider.js">
+      <publishTime>07/12/2016 15:49:39</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>03/14/2016 13:58:40</publishTime>
@@ -427,7 +613,7 @@
       <publishTime>03/28/2016 09:40:26</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>05/05/2016 11:18:52</publishTime>
+      <publishTime>07/12/2016 14:44:06</publishTime>
     </File>
     <File Include="upload/20150409/20150409050535_723.jpg">
       <publishTime>04/09/2015 11:05:36</publishTime>
@@ -675,17 +861,26 @@
     <File Include="upload/201604/2016041909.jpg">
       <publishTime>05/03/2016 11:53:37</publishTime>
     </File>
+    <File Include="Views/App/DetailAddress.cshtml">
+      <publishTime>07/07/2016 14:46:02</publishTime>
+    </File>
+    <File Include="Views/App/Guide.cshtml">
+      <publishTime>07/08/2016 14:12:26</publishTime>
+    </File>
+    <File Include="Views/App/Index.cshtml">
+      <publishTime>07/08/2016 15:13:58</publishTime>
+    </File>
     <File Include="Views/Company/Index.cshtml">
       <publishTime>05/03/2016 11:36:35</publishTime>
     </File>
     <File Include="Views/Department/Index.cshtml">
-      <publishTime>05/06/2016 17:26:25</publishTime>
+      <publishTime>05/16/2016 09:15:21</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>05/06/2016 17:24:17</publishTime>
+      <publishTime>07/12/2016 15:50:08</publishTime>
     </File>
     <File Include="Views/Joinus/Index.cshtml">
-      <publishTime>05/03/2016 11:34:54</publishTime>
+      <publishTime>05/10/2016 14:36:46</publishTime>
     </File>
     <File Include="Views/News/Detail.cshtml">
       <publishTime>05/03/2016 12:16:25</publishTime>
@@ -694,19 +889,19 @@
       <publishTime>03/23/2016 15:03:22</publishTime>
     </File>
     <File Include="Views/Product/ClientApply.cshtml">
-      <publishTime>03/28/2016 09:10:42</publishTime>
+      <publishTime>05/11/2016 09:03:51</publishTime>
     </File>
     <File Include="Views/Product/Detail.cshtml">
-      <publishTime>04/27/2016 16:50:57</publishTime>
+      <publishTime>05/13/2016 16:44:41</publishTime>
     </File>
     <File Include="Views/Product/Index.cshtml">
-      <publishTime>03/15/2016 16:34:07</publishTime>
+      <publishTime>05/13/2016 16:46:54</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>03/14/2016 13:58:43</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>05/10/2016 14:04:49</publishTime>
+      <publishTime>07/08/2016 15:19:42</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>03/14/2016 13:58:38</publishTime>
@@ -715,7 +910,7 @@
       <publishTime>03/14/2016 13:58:38</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/05/2016 11:11:40</publishTime>
+      <publishTime>05/13/2016 17:06:17</publishTime>
     </File>
   </ItemGroup>
 </Project>
