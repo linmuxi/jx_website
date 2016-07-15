@@ -188,7 +188,6 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="html\1.html" />
     <Content Include="html\default.css" />
     <Content Include="html\DimensionCode.html" />
     <Content Include="html\product_detail_fced.html" />

@@ -117,7 +117,7 @@ ul{
 
 /*banner*/
 .home-banner{
-	height: 570px;
+	/* height: 570px; */
 	position: relative;
 	/*background-size: cover;*/
 }
@@ -154,6 +154,7 @@ ul{
 .info{
 	height: 80px;
 	background-color: rgb(54,53,51);
+	margin-top:-4px;
 }
 
 .info-wrap{

@@ -87,8 +87,8 @@ namespace jx_website.Web.Controllers
             object id = this.productBLL.addClientApply(clientApply);
 
             //开一个线程去发送申请信息到申请区域客服邮箱
-            Thread thread = new Thread(new ParameterizedThreadStart(SendEmail));
-            thread.Start(clientApply);
+            //Thread thread = new Thread(new ParameterizedThreadStart(SendEmail));
+            //thread.Start(clientApply);
 
             return Json(new Message((int.Parse(id.ToString()) > 0), "操作完成"));
         }

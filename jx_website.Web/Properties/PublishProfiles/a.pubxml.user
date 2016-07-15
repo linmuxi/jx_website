@@ -6,14 +6,14 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>E:\jxjust\官网\publish\20160712</_PublishTargetUrl>
+    <_PublishTargetUrl>E:\jxjust\官网\publish\20160714</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>04/21/2016 16:51:53</publishTime>
     </File>
     <File Include="bin/jx_website.Web.dll">
-      <publishTime>07/12/2016 15:53:04</publishTime>
+      <publishTime>07/14/2016 09:09:05</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.dll">
       <publishTime>04/21/2016 16:52:09</publishTime>
@@ -127,7 +127,7 @@
       <publishTime>03/14/2016 13:58:40</publishTime>
     </File>
     <File Include="Content/default.css">
-      <publishTime>07/12/2016 14:43:32</publishTime>
+      <publishTime>07/13/2016 10:12:47</publishTime>
     </File>
     <File Include="download/填写模板.zip">
       <publishTime>07/07/2016 16:39:44</publishTime>
@@ -877,7 +877,7 @@
       <publishTime>05/16/2016 09:15:21</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>07/12/2016 15:50:08</publishTime>
+      <publishTime>07/13/2016 10:12:31</publishTime>
     </File>
     <File Include="Views/Joinus/Index.cshtml">
       <publishTime>05/10/2016 14:36:46</publishTime>
@@ -910,7 +910,7 @@
       <publishTime>03/14/2016 13:58:38</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/13/2016 17:06:17</publishTime>
+      <publishTime>07/14/2016 09:05:43</publishTime>
     </File>
   </ItemGroup>
 </Project>
